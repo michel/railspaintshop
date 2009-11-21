@@ -1,0 +1,9 @@
+- content_tag_for(:tr, user, :class => cycle(:odd, :even)) do
+  %td.email= h user.try(:email)
+  %td.password= h user.try(:password)
+  %td.actions
+    = link_to 'Show', user_path(user)
+    |
+    = link_to 'Edit', edit_user_path(user)
+    |
+    = link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
