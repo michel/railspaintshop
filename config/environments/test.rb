@@ -25,7 +25,15 @@ config.action_mailer.delivery_method = :test
 
 config.gem "rspec", :lib => false 
 config.gem "rspec-rails", :lib => false
-config.gem "mocha", :lib => false
+#config.gem "mocha", :lib => false  
+config.gem "remarkable_rails", :lib => false
+config.gem "cucumber"   , :lib => false                
+config.gem "webrat"   , :lib => false                
+config.gem "treetop"     , :lib => false                
+config.gem "term-ansicolor"        , :lib => false                
+config.gem "diff-lcs" , :lib => false                
+config.gem "nokogiri"   , :lib => false                
+config.gem "builder"  , :lib => false   
 
 # Use SQL instead of Active Record's schema dumper when creating the test database.
 # This is necessary if your schema can't be completely dumped by the schema dumper,

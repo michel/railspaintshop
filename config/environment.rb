@@ -24,6 +24,7 @@ Rails::Initializer.run do |config|
   config.gem 'haml'
   config.gem 'will_paginate'
   config.gem 'justinfrench-formtastic', :lib => 'formtastic', :source => 'http://gems.github.com'
+  config.gem 'validation_reflection'  
   config.gem 'josevalim-inherited_resources', :lib => 'inherited_resources', :source => 'http://gems.github.com'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
