@@ -5,11 +5,16 @@ Feature: User registration
   
   Scenario: User attempts to create a new user account
     Given I am on the signup page
-    When I fill in "Email" with "jeroen@re-invention.nl"
+    When I fill in "Email" with "test@railspaintshop.com"
     And I fill in "Password" with "password"    
     And I fill in "Password confirmation" with "password"   
     And I press "Register"
-    Then I should see "Successfully signed up!"          
+    Then I should see "An activation email has been sent"
+    And I should receive an email
+    When I open the email
+    Then I should see "Account confirmation railspaintshop" in the email subject
+    When I click the first link in the email
+    Then I should see "Your account has been activated."
     
   Scenario: User attempts to create a new user account with invalid input
     Given I am on the signup page
