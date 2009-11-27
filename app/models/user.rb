@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base  
   acts_as_authentic                                          
+  has_many :themes
   
   def generate_activation_code!    
     update_attribute(:activation_code,Digest::SHA1.hexdigest(Time.now.to_s.split(//).sort_by {rand}.join))    

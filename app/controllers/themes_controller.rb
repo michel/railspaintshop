@@ -1,8 +1,12 @@
-class ThemesController < ApplicationController
-  
-  def index
-    render :text => flash[:notice]
-  end
-  
-  
+class ThemesController < InheritedResources::Base          
+  actions :index
+  respond_to :html
+
+    protected
+
+    def collection
+      @search = end_of_association_chain.search(params[:search])
+      @themes  = @search.paginate(:page => params[:page])
+    end    
+      
 end

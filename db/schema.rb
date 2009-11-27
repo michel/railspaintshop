@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091124201633) do
+ActiveRecord::Schema.define(:version => 20091127215346) do
+
+  create_table "themes", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "repo"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "themes", ["user_id"], :name => "index_themes_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                              :null => false

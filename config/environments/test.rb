@@ -34,7 +34,11 @@ config.gem "term-ansicolor"        , :lib => false
 config.gem "diff-lcs" , :lib => false                
 config.gem "nokogiri"   , :lib => false                
 config.gem "builder"  , :lib => false  
-config.gem 'bmabey-email_spec', :lib => 'email_spec'
+config.gem 'bmabey-email_spec', :lib => 'email_spec'        
+
+config.gem "thoughtbot-factory_girl",
+           :lib    => "factory_girl",
+           :source => "http://gems.github.com"
 
 # Use SQL instead of Active Record's schema dumper when creating the test database.
 # This is necessary if your schema can't be completely dumped by the schema dumper,
