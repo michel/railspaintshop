@@ -10,9 +10,9 @@ Feature: Show available themes
   Scenario: There are available themes
   Given that the following themes exist:
    | name         | description    | repo                           |
-   | nice theme 1 | "nice 1" | git://test.nl:nice_theme1.git  |
-   | nice theme 2 | "nice 2" | git://test.nl:nice_theme2.git  |
-   | nice theme 3 | "nice 3" | git://test.nl:nice_theme3.git  |
+   | nice theme 1 | "nice 1"       | git://test.nl:nice_theme1.git  |
+   | nice theme 2 | "nice 2"       | git://test.nl:nice_theme2.git  |
+   | nice theme 3 | "nice 3"       | git://test.nl:nice_theme3.git  |
   And I am on the themes page 
   Then I should see "nice theme 1"       
   Then I should see "nice theme 2"        
