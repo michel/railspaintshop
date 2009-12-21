@@ -13,8 +13,13 @@ class UserSessionsController < ApplicationController
     else
       flash[:error] = "Invalid user credentials"
       render :new
-    end
-    
+    end     
+  end   
+  
+  def destroy
+    current_user_session.destroy
+    flash[:notice] = "Logout successfull!"
+    redirect_to new_user_session_path   
   end
   
 end

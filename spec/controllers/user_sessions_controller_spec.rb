@@ -17,11 +17,40 @@ describe UserSessionsController do
       UserSession.expects(:new).returns(user_session)
       do_get
       assigns(:user_session).should == user_session 
-    end
+    end 
+    
+
     
   end 
   
-  
+       
+  describe "Handeling DELETE requests" do
+    
+    before(:each) do
+      @current_user_session = mock("current_user_session")                                    
+      @current_user_session.expects(:destroy)              
+      controller.expects(:current_user_session).returns(@current_user_session)                
+    end                                                   
+    
+    def do_delete                              
+      delete :destroy
+    end              
+    
+    it "should destroy the current_user_session" do
+        do_delete
+    end          
+    
+    it "should set the flash" do
+      do_delete      
+      flash[:notice].should == "Logout successfull!"
+    end  
+    
+    it "should redirect to the login page" do
+       do_delete
+       controller.should redirect_to(new_user_session_path)                  
+    end
+    
+  end
 
   describe "Handeling POST create" do
 
@@ -51,7 +80,8 @@ describe UserSessionsController do
        do_post
        response.should render_template("user_sessions/new")      
        flash[:error].should == "Invalid user credentials"
-   end     
+   end 
+       
                                     
   
   end

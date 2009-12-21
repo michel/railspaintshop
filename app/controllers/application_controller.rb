@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   filter_parameter_logging :password
-  helper_method :current_user
+  helper_method :current_user_session, :current_user
 
   private
 

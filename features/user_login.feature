@@ -16,3 +16,9 @@ Feature: Login
     And I fill in "Password" with "webrat"
     And I press "Login"
     Then I should see "Invalid user credentials"  
+    
+  Scenario: User logs out
+    Given I am logged in the application
+    When I go to the logout page    
+    Then I should see "Logout successfull!"
+    

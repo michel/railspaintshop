@@ -13,7 +13,10 @@ module NavigationHelpers
     when /the login page/
       login_path
     when /the signup page/
-      signup_path
+      signup_path  
+    when /the logout page/  
+      logout_path
+    
     
     # Add more mappings here.
     # Here is a more fancy example:
