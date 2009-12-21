@@ -1,5 +1,5 @@
 class ThemesController < InheritedResources::Base          
-  actions :index
+  actions :index, :show
   respond_to :html
 
     protected

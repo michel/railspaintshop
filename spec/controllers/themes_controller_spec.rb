@@ -16,6 +16,21 @@ describe ThemesController do
       assigns[:themes].size.should be(@themes.size)      
     end
   
+  end       
+  
+  describe "GET show" do
+    
+    def do_get(params=nil)
+      get :show , params
+    end                  
+    
+    it "should show the selected theme" do
+      @theme = Factory.create(:theme)    
+      Theme.expects(:find).with('1').returns(@theme)
+      do_get :id => @theme.id   
+      assigns[:theme].should == @theme
+    end              
+                        
   end
   
 end

@@ -15,7 +15,14 @@ describe Theme do
   it { should have_index(:user_id) }       
   it { should validate_presence_of(:name) }       
   it { should validate_presence_of(:repo) }
-  it { should validate_uniqueness_of(:name) }
+  it { should validate_uniqueness_of(:name) }    
+  
+  
+  it "Should have a to param method for search friendly urls" do
+    @theme = Theme.create(:name => "Nice theme", :repo => "git://redrocket.com.git", :description  => "test")
+    @theme.expects(:id).returns(1)
+    @theme.to_param.should == "1-nice-theme"   
+  end
   
      
 end
